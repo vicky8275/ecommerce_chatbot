@@ -191,7 +191,6 @@ curl http://localhost:11434/api/tags
 ```bash
 # Delete and recreate database
 rm ecommerce.db
-rm -rf chroma_db/
 
 # Restart the app
 python app.py
