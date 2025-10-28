@@ -1,7 +1,16 @@
+# Web Framework & Server
 fastapi==0.115.0
 uvicorn[standard]==0.32.0
+
+# Database
 sqlalchemy==2.0.36
+
+# AI/ML Libraries
 faiss-cpu==1.12.0
 sentence-transformers==3.0.0
+
+# HTTP Requests
 requests==2.32.3
+
+# Data Validation
 pydantic==2.10.3

@@ -46,24 +46,26 @@ pip install -r requirements.txt
 
 ### 4. Project Structure
 
-Create these files in your project directory:
-
 ```
 ecommerce_chatbot/
+├── .gitignore          # Git ignore rules
 ├── app.py              # Main FastAPI application
 ├── chatbot.py          # Core chatbot logic
 ├── database.py         # Database models and setup
-├── rag_engine.py       # RAG implementation
+├── rag_engine.py       # RAG implementation with FAISS
 ├── index.html          # Web chat interface
 ├── requirements.txt    # Python dependencies
-└── README.md           # This file
+├── readme.md           # This README file
+├── TECHNOLOGY_EDUCATION.md  # Technology explanations
+└── knowledge_base/     # Knowledge base directory
+    └── faqs.txt        # FAQ documents
 ```
 
 **Note:** The following will be auto-created when you run the app:
-- `knowledge_base/` folder with `faqs.txt`
 - `faiss_index.bin` FAISS vector index
 - `documents.pkl` Pickled document chunks
 - `ecommerce.db` SQLite database
+- `__pycache__/` Python cache files (ignored by git)
 
 ## 🏃 Running the Application
 
@@ -89,12 +91,12 @@ You should see:
 ✓ Database seeded with sample data
 ✓ Loaded existing knowledge base
 ✓ Chatbot ready!
-INFO:     Uvicorn running on http://0.0.0.0:8001
+INFO:     Uvicorn running on http://0.0.0.0:8000
 ```
 
 ### Step 3: Access the Web Interface
 
-Open your browser and navigate to: `http://localhost:8001`
+Open your browser and navigate to: `http://localhost:8000`
 
 The web interface provides a modern chat UI for interacting with the chatbot.
 
@@ -104,7 +106,7 @@ The web interface provides a modern chat UI for interacting with the chatbot.
 
 **Request:**
 ```bash
-curl -X POST "http://localhost:8001/chat" \
+curl -X POST "http://localhost:8000/chat" \
   -H "Content-Type: application/json" \
   -d '{"message": "Where is my order 12345?"}'
 ```
@@ -120,7 +122,7 @@ curl -X POST "http://localhost:8001/chat" \
 ### Health Check
 
 ```bash
-curl http://localhost:8001/health
+curl http://localhost:8000/health
 ```
 
 ## 🧪 Sample Test Queries
@@ -206,6 +208,13 @@ rm faiss_index.bin documents.pkl
 python app.py
 ```
 
+### Missing Files
+
+If you encounter missing file errors, ensure all required files are present:
+- `app.py`, `chatbot.py`, `database.py`, `rag_engine.py`
+- `index.html`, `requirements.txt`
+- `knowledge_base/faqs.txt`
+
 ### Port Already in Use
 
 In `app.py`, change the port:
@@ -256,6 +265,17 @@ ChatBot.process_message()
 4. **Logging** - Add proper logging for debugging
 5. **Streaming Responses** - Make Ollama stream responses in real-time
 6. **Multi-language Support** - Add support for multiple languages
+7. **Docker Containerization** - Package app for easy deployment
+8. **API Rate Limiting** - Prevent abuse and ensure fair usage
+9. **Analytics Dashboard** - Track user interactions and satisfaction
+10. **Voice Integration** - Add speech-to-text and text-to-speech
+
+## 📚 Additional Resources
+
+- **[TECHNOLOGY_EDUCATION.md](TECHNOLOGY_EDUCATION.md)** - Detailed explanations of all technologies used
+- **FastAPI Documentation**: https://fastapi.tiangolo.com/
+- **Ollama Models**: https://ollama.ai/library
+- **FAISS Documentation**: https://github.com/facebookresearch/faiss
 
 ## 📄 License
 
