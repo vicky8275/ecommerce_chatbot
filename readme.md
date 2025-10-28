@@ -16,6 +16,7 @@ A RAG-powered customer support chatbot using Ollama (local LLM), FastAPI, and FA
 
 - Python 3.8+
 - Ollama installed with llama3:latest model (✅ You already have this!)
+- **System Requirements**: Ollama with llama3:latest requires 8GB+ RAM and benefits significantly from GPU acceleration. For systems with limited resources, consider using lighter models like phi3:latest (see Configuration section below).
 
 ## 🚀 Installation
 
@@ -160,8 +161,13 @@ The database is automatically populated with:
 
 In `chatbot.py`, modify:
 ```python
-self.model = "llama3:latest"  # Change to "phi3:latest" if preferred
+self.model = "llama3:latest"  # Change to "phi3:latest" for better performance on lower-end systems
 ```
+
+**Recommended Models by System:**
+- **High-end systems (16GB+ RAM, GPU)**: `llama3:latest` (best quality)
+- **Mid-range systems (8GB+ RAM)**: `llama3:8b` or `mistral:latest`
+- **Low-end systems (4-8GB RAM)**: `phi3:latest` or `gemma:2b` (faster, lower quality)
 
 ### Adjust RAG Results
 
