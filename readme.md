@@ -15,8 +15,35 @@ A RAG-powered customer support chatbot using Ollama (local LLM), FastAPI, and FA
 ## 📋 Prerequisites
 
 - Python 3.8+
-- Ollama installed with llama3:latest model (✅ You already have this!)
+- **Ollama Installation**: Required for local LLM functionality
 - **System Requirements**: Ollama with llama3:latest requires 8GB+ RAM and benefits significantly from GPU acceleration. For systems with limited resources, consider using lighter models like phi3:latest (see Configuration section below).
+
+### Installing Ollama
+
+1. **Download Ollama**:
+   - Visit https://ollama.ai/download
+   - Download the installer for your operating system (Windows, macOS, or Linux)
+
+2. **Install Ollama**:
+   - Run the installer and follow the setup instructions
+   - Ollama will be installed and added to your system PATH
+
+3. **Pull the Required Model**:
+   ```bash
+   # Pull the llama3 model (default, best quality)
+   ollama pull llama3:latest
+
+   # Alternative: Pull a lighter model for lower-end systems
+   ollama pull phi3:latest
+   ```
+
+4. **Start Ollama Server**:
+   ```bash
+   # Start the Ollama server (run this in a separate terminal)
+   ollama serve
+   ```
+
+   Keep this terminal running while using the chatbot. The server runs on `http://localhost:11434`.
 
 ## 🚀 Installation
 
