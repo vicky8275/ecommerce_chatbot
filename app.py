@@ -45,11 +45,7 @@ async def get_chat_interface():
     with open("index.html", "r", encoding="utf-8") as f:
         return f.read()
 
-@app.on_event("startup")
-async def startup_event():
-    print("🚀 Starting E-Commerce Chatbot...")
-    seed_database()
-    print("✓ Chatbot ready!")
+
 
 @app.post("/chat", response_model=ChatResponse)
 async def chat(message: ChatMessage):
