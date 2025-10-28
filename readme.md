@@ -89,12 +89,12 @@ You should see:
 ✓ Database seeded with sample data
 ✓ Loaded existing knowledge base
 ✓ Chatbot ready!
-INFO:     Uvicorn running on http://0.0.0.0:8000
+INFO:     Uvicorn running on http://0.0.0.0:8001
 ```
 
 ### Step 3: Access the Web Interface
 
-Open your browser and navigate to: `http://localhost:8000`
+Open your browser and navigate to: `http://localhost:8001`
 
 The web interface provides a modern chat UI for interacting with the chatbot.
 
@@ -104,7 +104,7 @@ The web interface provides a modern chat UI for interacting with the chatbot.
 
 **Request:**
 ```bash
-curl -X POST "http://localhost:8000/chat" \
+curl -X POST "http://localhost:8001/chat" \
   -H "Content-Type: application/json" \
   -d '{"message": "Where is my order 12345?"}'
 ```
@@ -120,7 +120,7 @@ curl -X POST "http://localhost:8000/chat" \
 ### Health Check
 
 ```bash
-curl http://localhost:8000/health
+curl http://localhost:8001/health
 ```
 
 ## 🧪 Sample Test Queries
@@ -210,7 +210,7 @@ python app.py
 
 In `app.py`, change the port:
 ```python
-uvicorn.run(app, host="0.0.0.0", port=8001)  # Changed from 8000
+uvicorn.run(app, host="0.0.0.0", port=8002)  # Changed from 8001
 ```
 
 ## 📊 Architecture
