@@ -56,7 +56,6 @@ ecommerce_chatbot/
 ├── index.html          # Web chat interface
 ├── requirements.txt    # Python dependencies
 ├── readme.md           # This README file
-├── TECHNOLOGY_EDUCATION.md  # Technology explanations
 └── knowledge_base/     # Knowledge base directory
     └── faqs.txt        # FAQ documents
 ```
@@ -219,7 +218,7 @@ If you encounter missing file errors, ensure all required files are present:
 
 In `app.py`, change the port:
 ```python
-uvicorn.run(app, host="0.0.0.0", port=8002)  # Changed from 8001
+uvicorn.run(app, host="0.0.0.0", port=8001)  # Changed from 8000
 ```
 
 ## 📊 Architecture
@@ -272,7 +271,6 @@ ChatBot.process_message()
 
 ## 📚 Additional Resources
 
-- **[TECHNOLOGY_EDUCATION.md](TECHNOLOGY_EDUCATION.md)** - Detailed explanations of all technologies used
 - **FastAPI Documentation**: https://fastapi.tiangolo.com/
 - **Ollama Models**: https://ollama.ai/library
 - **FAISS Documentation**: https://github.com/facebookresearch/faiss
